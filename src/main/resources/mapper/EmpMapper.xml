@@ -69,4 +69,35 @@
             </if>
         </where>
     </delete>
+    <select id="selectByEidEqualsAndAgeBetween" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_emp
+        <where>
+            <if test="eid != null">
+                eid = #{eid,jdbcType=NUMERIC}
+            </if>
+            <if test="age != null">
+                AND age between #{beginAge,jdbcType=INTEGER} and #{endAge,jdbcType=INTEGER}
+            </if>
+        </where>
+    </select>
+    <update id="updateAgeAndSex">
+        update t_emp
+        set age = #{age,jdbcType=NUMERIC},
+            sex = #{sex,jdbcType=VARCHAR}
+    </update>
+    <update id="updateAgeAndEmpNameByEidAndDelFlag">
+        update t_emp
+        set age = #{age,jdbcType=NUMERIC},
+        emp_name = #{empName,jdbcType=VARCHAR}
+        <where>
+            <if test="eid != null">
+                eid = #{eid,jdbcType=NUMERIC}
+            </if>
+            <if test="delFlag != null and delFlag != ''">
+                AND del_flag = #{delFlag,jdbcType=VARCHAR}
+            </if>
+        </where>
+    </update>
 </mapper>
