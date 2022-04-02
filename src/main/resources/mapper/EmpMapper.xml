@@ -100,4 +100,10 @@
             </if>
         </where>
     </update>
+    <select id="selectAllOrderByAgeDesc" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_emp
+        order by age desc
+    </select>
 </mapper>

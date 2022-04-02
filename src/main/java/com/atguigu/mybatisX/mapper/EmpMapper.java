@@ -78,6 +78,13 @@ public interface EmpMapper extends BaseMapper<Emp> {
                                            @Param("empName") String empName,
                                            @Param("eid") Integer eid,
                                            @Param("delFlag") String delFlag);
+
+    /**
+     * 选择所有订单按年龄desc
+     *
+     * @return {@link List}<{@link Emp}>
+     */
+    List<Emp> selectAllOrderByAgeDesc();
 }
 
 
