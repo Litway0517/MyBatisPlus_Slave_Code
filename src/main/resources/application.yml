@@ -4,17 +4,17 @@ spring:
   dynamic:
     # 设置默认的数据源或者数据源组, 默认值即为master
     primary: master
-    # 严格匹配数据源, 默认false. 当为true时 若数据未匹配到指定数据源时 抛异常, false则会使用默认数据源
+    # 严格匹配数据源, 默认false. 设置为true: 当匹配不到数据源时会抛出异常. 设置为false: 匹配不到数据源时, 会使用默认的数据源.
     strict: false
     datasource:
       # master取名可以写成abc, 但是上面的primary也得是abc
       master:
-        url: jdbc:mysql://localhost:3306/mybatis_plus?characterEncoding=utf-8&useSSL=false
+        url: jdbc:mysql://localhost:3306/mybatisplus_code?characterEncoding=utf-8&useSSL=false
         driver-class-name: com.mysql.cj.jdbc.Driver
         username: root
         password: root
       slave_1:
-        url: jdbc:mysql://localhost:3306/mybatis_plus_1?characterEncoding=utf-8&useSSL=false
+        url: jdbc:mysql://localhost:3306/mybatisplus_slave?characterEncoding=utf-8&useSSL=false
         driver-class-name: com.mysql.cj.jdbc.Driver
         username: root
         password: root
