@@ -1,5 +1,7 @@
 package com.atguigu.mybatisplus.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
@@ -9,11 +11,13 @@ import lombok.Data;
  * @date 2022/04/02
  */
 @Data
+@TableName("t_user")
 public class User {
 
     /**
      * uid
      */
+    @TableId("uid")
     private Long uid;
     /**
      * 用户名
