@@ -1,16 +1,18 @@
 package com.atguigu.mybatisX.mapper;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 import com.atguigu.mybatisX.pojo.Emp;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
-* @author DELL_
-* @description 针对表【t_emp】的数据库操作Mapper
-* @createDate 2022-04-02 20:24:36
-* @Entity com.atguigu.mybatisX.pojo.Emp
-*/
+ * @author DELL_
+ * @description 针对表【t_emp】的数据库操作Mapper
+ * @createDate 2022-04-02 20:24:36
+ * @Entity com.atguigu.mybatisX.pojo.Emp
+ */
 public interface EmpMapper extends BaseMapper<Emp> {
     /**
      * 插入选择性
@@ -85,6 +87,27 @@ public interface EmpMapper extends BaseMapper<Emp> {
      * @return {@link List}<{@link Emp}>
      */
     List<Emp> selectAllOrderByAgeDesc();
+
+    List<Emp> listAllByAgeAfter(@Param("minAge") Integer minAge);
+
+    // 这两个是一样的, After 等价于 GreaterThan
+    List<Emp> listAllByAgeBefore(@Param("maxAge")Integer maxAge);
+    List<Emp> listAllByAgeGreaterThan(@Param("minAge")Integer minAge);
+
+    List<Emp> listAllByDelFlagGreaterThan(@Param("minDelFlag")String minDelFlag);
+
+    List<Emp> selectByEidBetweenEqual(@Param("minEid")Integer minEid,@Param("maxEid")Integer maxEid);
+
+    List<Emp> selectAllByAgeGreaterThanOrEqualTo(@Param("minAge")Integer minAge);
+
+    // 如果eid字段后面不添加判断条件(> >= = <= <)的话, 默认是等于
+    List<Emp> selectByEid(@Param("eid")Integer eid);
+
+    List<Emp> getByEid(@Param("eid")Integer eid);
+
+
+
+
 }
 
 
