@@ -23,7 +23,4 @@ public class MyBatisPlusApplicationTest {
         System.out.println(productService.getById(1));
     }
 
-
-
-
 }
