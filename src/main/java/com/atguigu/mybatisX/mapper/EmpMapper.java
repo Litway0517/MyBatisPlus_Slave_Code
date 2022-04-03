@@ -88,6 +88,12 @@ public interface EmpMapper extends BaseMapper<Emp> {
      */
     List<Emp> selectAllOrderByAgeDesc();
 
+
+    /*
+        上面是测试了MybatisX插件
+        =====================================================
+        下面测试的是MybatisCodeHelperPro
+     */
     List<Emp> listAllByAgeAfter(@Param("minAge") Integer minAge);
 
     // 这两个是一样的, After 等价于 GreaterThan
@@ -104,6 +110,10 @@ public interface EmpMapper extends BaseMapper<Emp> {
     List<Emp> selectByEid(@Param("eid")Integer eid);
 
     List<Emp> getByEid(@Param("eid")Integer eid);
+
+    List<Emp> getAllByEid(@Param("eid")Integer eid);
+
+
 
 
 
