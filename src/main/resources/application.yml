@@ -19,6 +19,13 @@ spring:
           username: root
           password: root
 
+mybatis-plus:
+  mapper-locations:
+    - classpath:/mybatiscodehelperpro/mapper/*.xml
+  global-config:
+    db-config:
+      id-type: AUTO
+
 
 
 
