@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @MapperScan("com.atguigu.mybatisplus.mapper")
+@MapperScan("com.atguigu.mybatiscodehelperpro.mapper")
 @SpringBootApplication
 public class MyBatisPlusSlaveCodeApplication {
 
