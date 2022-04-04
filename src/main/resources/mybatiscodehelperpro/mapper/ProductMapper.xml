@@ -34,15 +34,9 @@
         <!--@mbg.generated-->
         insert into t_product
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="name != null">
-                `name`,
-            </if>
-            <if test="price != null">
-                price,
-            </if>
-            <if test="version != null">
-                version,
-            </if>
+            <if test="name != null and name != ''">`name`,</if>
+            <if test="price != null and price != ''">price,</if>
+            <if test="version != null and version != ''">version,</if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="name != null">
@@ -81,3 +75,4 @@
         where id = #{id}
     </update>
 </mapper>
+
