@@ -1,7 +1,9 @@
 package com.atguigu.mybatiscodehelperpro.mapper;
 
 import com.atguigu.mybatiscodehelperpro.pojo.Product;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface ProductMapper {
     /**
      * delete by primary key
