@@ -7,6 +7,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * 产品映射器测试
+ *
+ * @author DELL_
+ * @date 2022/04/05
+ */
 @SpringBootTest
 class ProductMapperTest {
 
