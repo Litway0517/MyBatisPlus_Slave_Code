@@ -19,6 +19,15 @@ class ProductMapperTest {
     @Autowired
     private ProductMapper productMapper;
 
+    // 测试更新
+    @Test
+    public void updateProductByIdAndName() {
+        Product product = new Product();
+        product.setPrice(12999);
+        product.setName("ROG笔记本");
+        productMapper.updateByIdAndPriceAndName(product, 1L, 12999, "外星人笔记本");
+    }
+
     @Test
     public void testProductMapper() {
         Product product = new Product();
