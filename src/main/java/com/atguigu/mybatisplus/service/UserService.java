@@ -4,6 +4,9 @@ import com.atguigu.mybatisplus.entity.User;
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /*
     DS注解用于标识此Service使用的数据源是哪一个
     DS注解能够用于类上也能够用于方法上, 就近原则
@@ -12,6 +15,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 @DS("master")
 public interface UserService extends IService<User> {
+
+    public List<User> getUserList();
 
 
 }
