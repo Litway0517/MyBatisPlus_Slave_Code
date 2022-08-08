@@ -12,8 +12,6 @@ import java.util.List;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
-
-    @Override
     public List<User> getUserList() {
         return list();
     }
